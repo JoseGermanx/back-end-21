@@ -22,7 +22,10 @@ router.put('/user/:id', updateUserData )
 router.delete('/user/:id', deleteUser )
 
 // /user (POST) --> lOGIN
-router.post('/login', loginUser )
+router.post('/login', (req,res, next)=> {  
+    console.log("Middleware intermedio antes de ejecutar el login")
+    next()
+}, loginUser )
 
 
 module.exports = router
