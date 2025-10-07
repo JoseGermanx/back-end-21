@@ -1,10 +1,14 @@
 
 const mongoose = require("mongoose")
 
-const dbConnection = () => {
+const dbConnection = async () => {
 
-mongoose.connect("mongodb://localhost:27017/users_cohor21") // código asincrónico
-
+    try { //intentar hacer 
+        await mongoose.connect("mongodb://localhost:27017/users_cohor21") // código asincrónico
+        console.log("Servidor de base de datos ejecuntado correctamente!")
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 
