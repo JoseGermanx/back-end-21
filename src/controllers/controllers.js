@@ -50,8 +50,13 @@ const getUserDetails = async (req, res) => {
     })
 }
 
-const updateUserData = (req, res) => {
-    res.send("Acá estaremos actualizando los datos de un usuario!")
+const updateUserData = async (req, res) => {
+    
+    await User.findByIdAndUpdate(req.params.id, {email: req.body.email})
+
+    res.status(200).json({
+        msg: "Datos actualizados!",
+    })
 }
 
 const deleteUser = (req, res) => {
