@@ -18,8 +18,11 @@ router.get('/user/:id', getUserDetails )
 // /user (PUT) --> Actualzar los datos de un usuario
 router.put('/user/:id', updateUserData )
 
-// /user (DELETE) --> Actualzar los datos de un usuario
+// /user (DELETE) --> Eliminar los datos de un usuario
 router.delete('/user/:id', deleteUser )
+
+
+
 
 // /user (POST) --> lOGIN
 router.post('/login', (req,res, next)=> {  
